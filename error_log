@@ -1,0 +1,1 @@
+[24-Jan-2021 21:25:55 Africa/Cairo] PHP Fatal error:  Cannot declare class CreateWaitersTable, because the name is already in use in /home/l6a6vvvrswv5/public_html/release/database/migrations/2020_09_21_011100_create_waiters_table.php on line 35

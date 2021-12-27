@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "foodbook-1e57c",
+  "private_key_id": "532dba3bb0986beb546a1e0a62be0fa4fbb4ecae",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCoInmwBHhflXgv\nauGb9RgFFKkY+ZqpKSlWBkGL8Ui3JWnsTxIfnAPHRhROK1fLY/5WO+nRt8CieOAY\nqa9AOvehVWQlUs1mv/xM1hS/B1P5dCqKbYoqycSlh7YQoi5je3hxwC5ZkQsjD2I2\nK4+phrfL1C98oLDNXXa5sDrCDvC+aqqcqj/6Xt50iO31ngztP7GQHyM/s15RFN/+\nm37Uvp5Av8pW2kGIlV//7sqnDVhRes8do/cqkFov5l5IgG50k4uA1O0OSaBO5+de\nPblztJ7QaW2QGJXco1Ir/cxgCU34NJMBlqkC1LUjJu/87Ahl5r8zinqU3neq5aNm\ngm+ijr4bAgMBAAECggEAEy1TedsYq7ZNrgLf1rz+z12K5/lYRaEXQOOXyFFt/M28\npiJiq85MtAbvO/c/nUg7czSEN9Jgm2d0D/wSrB3Nrs4hjQxDt0uAiHcGiL9aOaKh\nU4ao8rZuwn6XKpCE//3OQBMudjLP9WDEz+7qBOkDv7Dk9a8SW2okp4tNOGMh3GX4\neVH3YGBYWcwfqGFvIqyevbzwCmhcTaHrZcZo/UqzwUz4pHO40LhN8p70rcMICRpC\nOeOhBZo04rR8UeS7RWKKXGW5VuUI3UTneFUisa8Zkso4hoonzq5whE7Ljq31q8Gt\nBPQLoRr142tMhjmRdiAfcQzvLM9nId2ocnCfXKNbQQKBgQDrY2dsh7228dec8N3/\nLkhWlYFLi63+8qGVLb3hTlzFKKfZj44ACc/IlbE+AjslSDO8Fpxu5EhW8P/qNpdM\nwjuKZzFAjnqQzsRLcAYnljFymS5U1PuMcfd3Wz5RmhlQ0Rd3X/EIexoT6MF8uSs8\nxy/o/j6oHAZBNpUP+8F4KCUxYQKBgQC223nwyUA+R7yIuNIEFZ7qBLsHbrC4/q/O\neURmblEZce8elk+9a/dC/1t4r+1dU8pD5MCtZBGcZ0yuaiopd4NWCTtdb1Kukdpc\n1qsV7gbYcz1P1+Rp7oQEo+hF4PmrPhT29w7Zg0p4L8XtaFOFuzjsbcqqybelM5gb\nrzZOLxPU+wKBgQCga0Z4+KmanIdNNfqVhn1WRN2xFqimL8VfXaUif71JwMNjyioE\nbKtnEF2S3QJiDirz7JUAHiQO3IAMptfGQDlDwcAXNwLg3Yl5wAbxw7I/X5XrypsE\nxEba2RxHkLXgFh/gA0rJdNv45Y+36JpG+Zj1ORCKkU7R8tjz46ees/1lAQKBgHoc\n+8QXQfXVhkxv0KC1p5h0bEo8W3xPaSyjw0/8X+B0O9HbY4kGLuvpCDcClat7p1nL\ny/h/GVuviH/5mgpzK5wrMh/llfvKn17cZQiSGrQ10T4e2QT9KeDHbPgtk84N+YYr\n2xjbGsJEdRNkVlK6gvsxHuULLL8AQ5ZJXiS8P6w9AoGBAJe7zfDGZluK2jtbpEou\nC0m20rE504Z9vh8ZZGjdZPEpbwYjkNQBE/GY7caTKrVn+OZl+r5rpMjvoyj7B7SQ\ndsgCV4+FVblJdsnNZYwHoba7F0z60JuKMgWqR1EK8moKTXpymP4kp2s3me17S2EW\nccRdcEtyo+q5UB9sWlD2Ya4Z\n-----END PRIVATE KEY-----\n",
+  "client_email": "foodbook-1e57c@appspot.gserviceaccount.com",
+  "client_id": "116132811805851015218",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/foodbook-1e57c%40appspot.gserviceaccount.com"
+}
