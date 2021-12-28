@@ -198,6 +198,7 @@ class FirestoreOperations
                                            ->collection('branchItems')->document("$branch->id")
                                            ->set([
                                                     "$item_id" => [
+                                                        'id' => $item_id,
                                                         'is_available' => $availability,
                                                     ]
                                                 ],['merge'=>1]);
