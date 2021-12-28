@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Traits\HasCommonTexts;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use App\FirestoreOperations;
 
 class Branch extends Model
 {
@@ -38,6 +39,7 @@ class Branch extends Model
     {
 //        $this->items()->where('id',$item->id)->piv
         $this->items()->updateExistingPivot($item->id,['is_available'=>$isAvailable]);
+        FirestoreOperations::getInstance()->addBranchItemAvailability($this, $item->id, $isAvailable);
     }
 
     function getItems()

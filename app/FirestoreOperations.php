@@ -191,4 +191,28 @@ class FirestoreOperations
             printf(PHP_EOL);
         }
     }
+
+    public function addBranchItemAvailability(Branch $branch, $item_id, $availability){
+        $branchesDocument = $this->database->collection('resturants')
+                                           ->document("$branch->resturant_id")
+                                           ->collection('branchItems')->document("$branch->id")
+                                           ->set([
+                                                    "$item_id" => [
+                                                        'is_available' => $availability,
+                                                    ]
+                                                ],['merge'=>1]);
+    }
+
+    private function getBranchItemRef($resturantId,$branchId)
+    {
+        return $this->database->collection('resturants')
+                              ->document("$resturantId")
+                              ->collection('branchItems')
+                              ->document("$branchId");
+    }
+
+    public function updateBranchItemAvailability(Branch $branch, $item_id, $availability) {
+        $branchItemRef = $this->getBranchItemRef($branch->resturant_id,$branch->id);
+        $branchRef->update([['path'=>"{$item_id}.is_available",'value'=>$availability]]);
+    }
 }
