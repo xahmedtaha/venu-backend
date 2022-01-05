@@ -102,6 +102,8 @@ class ItemController extends Controller
         {
             $imageFile = $image->store('public/product_images');
             $item->images()->create(['image'=>$imageFile]);
+            $file_path = storage_path('app/'.$imageFile);
+            $this->compress($file_path, $file_path);
         }
         $item_id = $item->id;
         $item->attachToResturantBranches();
@@ -183,6 +185,8 @@ class ItemController extends Controller
             {
                 $imageFile = $image->store('public/product_images');
                 $item->images()->create(['image'=>$imageFile]);
+                $file_path = storage_path('app/'.$imageFile);
+                $this->compress($file_path, $file_path);
             }
         }
         return bacK()->withSuccess('success');
@@ -198,5 +202,18 @@ class ItemController extends Controller
     {
         $item->delete();
         return back();
+    }
+
+    public function compress($source_image, $compress_image)
+    {
+        $image_info = getimagesize($source_image);
+        if ($image_info['mime'] == 'image/jpeg') {
+            $source_image = imagecreatefromjpeg($source_image);
+            imagejpeg($source_image, $compress_image, 50);             
+        } elseif ($image_info['mime'] == 'image/png') {
+            $source_image = imagecreatefrompng($source_image);
+            imagepng($source_image, $compress_image, 4);
+        }
+        return $compress_image;
     }
 }
