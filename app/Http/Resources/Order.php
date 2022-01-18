@@ -20,6 +20,8 @@ class Order extends JsonResource
             "date" =>$this->created_at->format('Y-m-d h:i:s a') ,
             "resturant" =>$this->resturant->name ,
             "resturantLogo" =>$this->resturant->getLogoUrl() ,
+            "applied_tax" => $this->tax ,
+            "applied_service" => $this->service ,
             "tax" =>$this->tax_value ,
             "service" =>$this->service_value ,
             "sub_total" =>$this->sub_total ,
