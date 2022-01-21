@@ -47,6 +47,16 @@
                         {{-- <span class="help-block"> A block of help text. </span> --}}
                     </div>
                 </div>
+                <div class="form-group col-md-6">
+                    <label class="col-md-4 control-label">NFC UID</label>
+                    <div class="col-md-8">
+                        @error('nfc_uid')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        <input type="text" name="nfc_uid" value="{{$table->nfc_uid}}" class="form-control">
+                        {{-- <span class="help-block"> A block of help text. </span> --}}
+                    </div>
+                </div>
                 @if(auth()->user()->level == 'SuperAdmin')
                 <div class="mt-checkbox-inline">
                     <div class="col-md-4">

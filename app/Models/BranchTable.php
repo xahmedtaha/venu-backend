@@ -216,4 +216,12 @@ class BranchTable extends Model
     {
         return $this->carts()->where('active',true)->distinct()->get(['user_id'])->pluck('user_id')->toArray();
     }
+
+    public function setNfcUidAttribute($value) {
+        if ( empty($value) ) {
+            $this->attributes['nfc_uid'] = NULL;
+        } else {
+            $this->attributes['nfc_uid'] = $value;
+        }
+    }
 }
