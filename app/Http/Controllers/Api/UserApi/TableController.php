@@ -58,11 +58,12 @@ class TableController extends ApiBaseController
     public function scanTableV2(Request $request,$tableHash, $nfcUid)
     {
         $table = BranchTable::where('hash',$tableHash)->with(['branch'])->first();
-        if(!$table)
-            abort(404);
+        if(!$table){
+            return $this->sendErrorMessage('This Table is not found',404);
+        }
 
         if($table->nfc_uid != NULL && $table->nfc_uid != $nfcUid){
-            abort(401);
+            return $this->sendErrorMessage('Tag does not belong to this Table',406);
         }
         if($table->merged_into)
             $table = BranchTable::find($table->merged_into);
