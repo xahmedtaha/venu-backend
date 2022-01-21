@@ -55,6 +55,54 @@ class TableController extends ApiBaseController
         }
     }
 
+    public function scanTableV2(Request $request,$tableHash, $nfcUid)
+    {
+        $table = BranchTable::where('hash',$tableHash)->with(['branch'])->first();
+        if(!$table)
+            abort(404);
+
+        if($table->nfc_uid != NULL && $table->nfc_uid != $nfcUid){
+            abort(401);
+        }
+        if($table->merged_into)
+            $table = BranchTable::find($table->merged_into);
+        $user = Auth::user();
+
+        if($table && $table->state == BranchTable::STATE_AVAILABLE)
+        {
+            if($user->active_cart)
+            {
+                if ($user->active_cart->table_id != $table->id)
+                    return $this->sendErrorMessage('This is not your table',406);
+            }
+
+//            if($this->awayFromBranch($table->branch,$request->header('Lat'),$request->header('Lng')))
+//            {
+//                return $this->sendErrorMessage('You are not in the branch',407);
+//            }
+            $order = $table->initOrder();
+            return $this->checkInTable($table);
+        }
+        elseif($table && $table->state == BranchTable::STATE_BUSY)
+        {
+            $user = Auth::user();
+            if($user->active_cart)
+            {
+                if ($user->active_cart->table_id == $table->id)
+                    return $this->reCheckInTable($table);
+                else
+                    return $this->sendErrorMessage('This is not your table',406);
+            }
+            else
+                return $this->checkInTable($table);
+            return $this->sendErrorMessage('Table is Busy!',406);
+        }
+        else
+        {
+            return $this->sendErrorMessage('Not Found',404);
+        }
+    }
+
     public function scanSharedTable(Request $request,$tableShareCode)
     {
         $table = BranchTable::where('share_code',$tableShareCode)->with(['branch'])->first();

@@ -31,6 +31,7 @@ Route::group(['middleware'=> ['app_version']],function (){
     {
         //table
         Route::get('/scanQrCode/{tableHash}','TableController@scanTable');
+        Route::get('/scanQrCode/{tableHash}/{nfcUid}','TableController@scanTableV2');
         Route::get('/scanQrCode/scanSharedTable/{tableShareCode}','TableController@scanSharedTable');
 
         //cart
