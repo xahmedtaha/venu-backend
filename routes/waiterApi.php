@@ -32,6 +32,7 @@ Route::group(['prefix' => 'waiter'], function () {
         Route::put('table/{table}','TableController@checkout');
         Route::put('/turnOffCallWaiter/{branchTable}','TableController@turnOffCallWaiter');
         Route::put('addItemToKitchen/{orderedItem}','OrderController@addItemToKitchen');
+        Route::put('removeItemToKitchen/{orderedItem}','OrderController@removeItemToKitchen');
 
         Route::get('/categories','ItemController@getCategories');
         Route::get('/items','ItemController@getItems');

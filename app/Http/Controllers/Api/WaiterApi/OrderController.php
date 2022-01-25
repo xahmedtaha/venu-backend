@@ -23,4 +23,13 @@ class OrderController extends ApiBaseController
         $order->calculate();
         return $this->sendResponse(['message'=>'success']);
     }
+
+    public function removeItemToKitchen(OrderedItem $orderedItem,Request $request)
+    {
+        // dd($orderedItem);
+        $orderedItem->update(['is_in_kitchen'=>0]);
+        $order = $orderedItem->order;
+        $order->calculate();
+        return $this->sendResponse(['message'=>'success']);
+    }
 }
