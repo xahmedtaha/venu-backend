@@ -37,6 +37,16 @@
                         </ul>
                     </div>
                 @endif
+                <div class="form-group col-md-12">
+                    @error('is_active')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    <label class="col-md-2 control-label">Enable</label>
+                    <div class="col-md-1">
+                        <input type="checkbox" name="is_active" {{$resturant->is_active? "checked":""}} value="1" class="form-control">
+                        {{-- <span class="help-block"> A block of help text. </span> --}}
+                    </div>
+                </div>
                 <div class="form-group col-md-6">
                     <label class="col-md-4 control-label">الاسم بالعربية</label>
                     <div class="col-md-8">

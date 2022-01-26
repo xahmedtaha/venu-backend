@@ -136,8 +136,11 @@ class ResturantController extends Controller
                                         'action_button_color',
                                         'selected_navigation_bar_color',
                                         'unselected_navigation_bar_color',
-                                        'background_color'
-                                        ));
+                                        'background_color',
+                                        'is_active'
+                                        )+[
+                                        'is_active' => $request->has('is_active')
+                                        ]);
 
         if($request->hasFile('images'))
         {
@@ -275,8 +278,11 @@ class ResturantController extends Controller
                                             'action_button_color',
                                             'selected_navigation_bar_color',
                                             'unselected_navigation_bar_color',
-                                            'background_color'
-                                            ));
+                                            'background_color',
+                                            'is_active'
+                                            )+[
+                                            'is_active' => $request->has('is_active')
+                                            ]);
 
         if($request->hasFile('images'))
         {
