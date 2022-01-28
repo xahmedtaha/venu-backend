@@ -32,4 +32,14 @@ class OrderController extends ApiBaseController
         $order->calculate();
         return $this->sendResponse(['message'=>'success']);
     }
+
+    public function placeOrder(Cart $cart, Request $request)
+    {
+        $order = $cart->order;
+        $cart->orderedItems()->update(['state' => OrderedItem::STATE_IN_ORDER, 'is_in_kitchen'=>1]);
+
+        $order->calculate();
+
+        return $this->sendResponse(['message'=>'success']);
+    }
 }

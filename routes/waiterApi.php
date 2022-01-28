@@ -39,5 +39,10 @@ Route::group(['prefix' => 'waiter'], function () {
         Route::put('/items/{item}','ItemController@updateItemAvailability');
 
         Route::get('Logout',"LoginController@Logout");
+        Route::get('cart/{cart}', 'CartController@getCart');
+        Route::post('cart/{cart}', 'CartController@addToCart');
+        Route::put('cart/{cart}', 'CartController@editCartItem');
+        Route::delete('cart/{cart}/{cartItem}', 'CartController@deleteCartItem');
+        Route::post('/placeOrder/{cart}','OrderController@placeOrder');
     });
 });
