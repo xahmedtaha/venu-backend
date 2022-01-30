@@ -11,6 +11,7 @@ use App\Models\Order;
 use Auth;
 use App\Http\Controllers\Api\ApiBaseController;
 use App\Models\OrderedItem;
+use App\Models\Cart;
 
 class OrderController extends ApiBaseController
 {

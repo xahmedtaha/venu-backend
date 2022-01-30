@@ -54,4 +54,11 @@ class ItemController extends ApiBaseController
 
         return $this->sendResponse(['message'=>'success']);
     }
+
+    public function getItem(Item $item)
+    {
+        $item->load(['sides','sizes']);
+
+        return $this->sendResponse($item);
+    }
 }
