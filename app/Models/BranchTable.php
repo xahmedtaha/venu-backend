@@ -83,9 +83,11 @@ class BranchTable extends Model
             if($order)
                 $order->mergeInto($this->getActiveOrder());
         } else {
-            $order->update(['table_id'=>$this->id]);
-            $order->refresh();
-            $order->carts()->update(['table_id' => $this->id]);
+            if($order){
+                $order->update(['table_id'=>$this->id]);
+                $order->refresh();
+                $order->carts()->update(['table_id' => $this->id]);
+            }
         }
         event(new TableTransferredEvent($sourceTable,$this));
         FirestoreOperations::getInstance()->updateTable($sourceTable,[FirestoreOperations::TABLE_HAS_NEW_ITEMS=>false]);

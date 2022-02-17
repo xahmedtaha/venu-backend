@@ -32,6 +32,7 @@ class TableObserver
 
         Log::debug("Update for table $branchTable->id");
         $changes = $branchTable->getChanges();
+        Log::debug("table state $branchTable->state");
         if(isset($changes['deleted_at']))
         {
             return ;
