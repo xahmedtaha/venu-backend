@@ -26,7 +26,7 @@ class ItemController extends ApiBaseController
             "category_id" => "exists:resturant_item_categories,id"
         ]);
         if ($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
 
         $user = auth()->user();
 

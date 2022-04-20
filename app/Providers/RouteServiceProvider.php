@@ -52,7 +52,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
-        Route::middleware('web')
+        Route::middleware(['web','cors'])
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
     }
@@ -67,7 +67,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWaiterApiRoutes()
     {
         Route::prefix('api')
-             ->middleware(['api'])
+             ->middleware(['api','cors'])
              ->namespace('App\Http\Controllers\Api\WaiterApi')
              ->group(base_path('routes/waiterApi.php'));
     }
@@ -75,7 +75,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapUserApiRoutes()
     {
         Route::prefix('api/user')
-             ->middleware(['api','lang'])
+             ->middleware(['api','lang','cors'])
              ->namespace('App\Http\Controllers\Api\UserApi')
              ->group(base_path('routes/userApi.php'));
     }

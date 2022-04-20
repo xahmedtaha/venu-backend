@@ -71,6 +71,7 @@ class Kernel extends HttpKernel
         'inBranch' => \App\Http\Middleware\InBranch::class,
         'location' => \App\Http\Middleware\Location::class,
         'app_version' => \App\Http\Middleware\AppVersion::class,
+        'cors' => \App\Http\Middleware\Cors::class, 
     ];
 
     /**

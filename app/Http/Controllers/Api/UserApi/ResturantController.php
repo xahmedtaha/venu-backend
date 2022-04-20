@@ -39,7 +39,7 @@ class ResturantController extends ApiBaseController
         ]);
 
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
         $user = Auth::user();
         $resturantId = $request->RestaurantId;
         if($user->resturants->contains($resturantId))
@@ -63,7 +63,7 @@ class ResturantController extends ApiBaseController
         ]);
 
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
 
         $resturantId = $request->resturant_id;
         $ordertId = $request->order_id;
