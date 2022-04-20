@@ -22,15 +22,10 @@ class ApiBaseController extends BaseController
         return response()->json(["errors" => $errorMessage, "message" => "failed"], $code);
     }
 
-    // public function sendError($errors, $code = 400)
-    // {
-    //     $errorMessage = "";
-    //     foreach ($errors as $key=>$error) {
-    //         $errorMessage = $errors[$key][0];
-    //         break;
-    //     }
-    //     return response()->json(["message" => "failed", "errors" => $errorMessage], $code);
-    // }
+    public function sendError($errors, $code = 400)
+    {
+        return response()->json(["message" => "failed", "errors" => $errors->first()], $code);
+    }
 
     public function getImage($name)
     {

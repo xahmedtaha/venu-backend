@@ -26,7 +26,7 @@ class ItemController extends ApiBaseController
         ]);
 
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
 
         $nameAttr = 'name_'.$request->header('accept-language');
         $resturantId = $request->restuarantId;
@@ -66,7 +66,7 @@ class ItemController extends ApiBaseController
             "category_id"=>"exists:resturant_item_categories,id"
         ]);
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
 
         $resturantId = $request->restuarant_id;
         $categoryId = $request->category_id;
@@ -110,7 +110,7 @@ class ItemController extends ApiBaseController
             "productId"=>"required|exists:products,id",
         ]);
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
 
         $productId = $request->productId;
 

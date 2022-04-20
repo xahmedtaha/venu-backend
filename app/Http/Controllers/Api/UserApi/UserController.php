@@ -24,7 +24,7 @@ class UserController extends ApiBaseController
         ]);
 
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
 
         $fcm_token = $request->fcm_token;
         $lang = $request->header('accept-language')??'en';
@@ -61,7 +61,7 @@ class UserController extends ApiBaseController
         ]);
 
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
 
         $fcm_token = $request->fcm_token;
         $lang = $request->header('accept-language')??'en';
@@ -104,7 +104,7 @@ class UserController extends ApiBaseController
         ]);
 
         if ($validator->fails()) {
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
         }
         $user = User::where('email',$email)->first();
         if($user!=null)
@@ -137,7 +137,7 @@ class UserController extends ApiBaseController
         ]);
 
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
 
         $name = $request->name;
         $fcm_token = $request->fcm_token;
@@ -204,7 +204,7 @@ class UserController extends ApiBaseController
         ]);
 
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
 
         $lang = $request->lang;
         $user = Auth::user();
@@ -229,7 +229,7 @@ class UserController extends ApiBaseController
         ]);
 
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
 
         $name = $request->name;
         $password = $request->password;
@@ -273,7 +273,7 @@ class UserController extends ApiBaseController
             "pincode" => "required"
         ]);
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
 
         $hashKey = $request->hashKey;
         $pincode = $request->pincode;
@@ -317,7 +317,7 @@ class UserController extends ApiBaseController
             ]);
 
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
 
         $user->update($request->all());
 

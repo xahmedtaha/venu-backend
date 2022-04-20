@@ -50,7 +50,7 @@ class UserFeedbackController extends ApiBaseController
         ]);
 
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
         
         $resturantId = $request->resturantId;
         $reasonId = $request->reasonId;
@@ -97,7 +97,7 @@ class UserFeedbackController extends ApiBaseController
         ]);
 
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
         $message = $request->feedbackMsg;
         $feedback = UserFeedback::find($request->feedbackId);
         $feedbackMessage = $feedback->messages()->create([
@@ -115,7 +115,7 @@ class UserFeedbackController extends ApiBaseController
         ]);
 
         if($validator->fails())
-            return $this->sendError($validator->errors()->getMessages());
+            return $this->sendError($validator->errors());
             
         $feedback = UserFeedback::find($request->feedbackId);
         $feedbackMessages = $feedback->messages()->orderBy('created_at')->get();
