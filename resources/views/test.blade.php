@@ -12,14 +12,6 @@
 
     <script>
 
-        const test = async () => {
-            const response = await fetch('http://localhost:8000/api/user/phoneLogin', {
-                method: 'POST',
-            });
-            //const result = await response.json();
-            console.log(response);
-        }
-        test();
     </script>
 </body>
 
