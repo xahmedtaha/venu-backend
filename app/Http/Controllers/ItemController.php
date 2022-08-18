@@ -209,7 +209,7 @@ class ItemController extends Controller
         $image_info = getimagesize($source_image);
         if ($image_info['mime'] == 'image/jpeg') {
             $source_image = imagecreatefromjpeg($source_image);
-            imagejpeg($source_image, $compress_image, 50);             
+            imagejpeg($source_image, $compress_image, 50);
         } elseif ($image_info['mime'] == 'image/png') {
             $source_image = imagecreatefrompng($source_image);
             imagepng($source_image, $compress_image, 4);

@@ -67,7 +67,7 @@ class SizeController extends Controller
         if($validator->fails())
         {
             return back()->withErrors($validator->errors());
-        } 
+        }
 
         $resturant = $item->resturant;
 
