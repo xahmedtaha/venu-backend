@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('getPhoto/{folder}/{name}', 'LoginController@getPhoto');
 // Route::put('addItemToKitchen/{orderedItem}','OrderController@addItemToKitchen');
 
-Route::middleware(['cors'])->group(['prefix' => 'waiter'], function () {
+Route::group(['prefix' => 'waiter', 'middleware' => ['cors']], function () {
     Route::post('login','LoginController@Login');
     Route::group(['middleware' => ['auth:waiters']], function ()
     {
