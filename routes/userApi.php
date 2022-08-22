@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
-Route::group(['middleware'=> ['app_version', 'cors']],function (){
+Route::group(['middleware'=> ['app_version']],function (){
     //tables
     Route::get('/testfirestore','OrderController@testFirestore');
     Route::get('/getToken','GuestController@getToken');
